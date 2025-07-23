@@ -1,5 +1,4 @@
 export const config: WebdriverIO.Config = {
-    //
     // ====================
     // Runner Configuration
     // ====================
@@ -8,41 +7,19 @@ export const config: WebdriverIO.Config = {
     tsConfigPath: './test/tsconfig.json',
     
     port: 4723,
-    //
-    // =================
-    // Service Providers
-    // =================
-    // WebdriverIO supports Sauce Labs, Browserstack, Testing Bot and LambdaTest (other cloud providers
-    // should work too though). These services define specific user and key (or access key)
-    // values you need to put in here in order to connect to these services.
-    //
+
     user: process.env.BROWSERSTACK_USERNAME,
     key: process.env.BROWSERSTACK_ACCESS_KEY,
-    //
-    // If you run your tests on Sauce Labs you can specify the region you want to run your tests
-    // in via the `region` property. Available short handles for regions are `us` (default) and `eu`.
-    // These regions are used for the Sauce Labs VM cloud and the Sauce Labs Real Device Cloud.
-    // If you don't provide the region it will default for the `us`
-    
-    //
+
     // ==================
     // Specify Test Files
     // ==================
     // Define which test specs should run. The pattern is relative to the directory
     // of the configuration file being run.
-    //
-    // The specs are defined as an array of spec files (optionally using wildcards
-    // that will be expanded). The test for each spec file will be run in a separate
-    // worker process. In order to have a group of spec files run in the same worker
-    // process simply enclose them in an array within the specs array.
-    //
-    // The path of the spec files will be resolved relative from the directory of
-    // of the config file unless it's absolute.
-    //
     specs: [
         './test/specs/**/*.ts'
     ],
-    // Patterns to exclude.
+
     exclude: [
         // 'path/to/excluded/files'
     ],
@@ -72,10 +49,17 @@ export const config: WebdriverIO.Config = {
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
         browserName: 'Chrome',
-        'appium:deviceName': 'Android GoogleAPI Emulator',
-        'appium:platformVersion': '12.0',
-        'appium:automationName': 'UiAutomator2'
-    }],
+        'appium:deviceName': 'Samsung Galaxy S23 Ultra',
+        'appium:platformVersion': '13.0',
+        'appium:automationName': 'UiAutomator2',
+        'bstack:options' : {
+            "userName" : "armin_nxduqy",
+            "accessKey" : "KmGvP7M7gnHTingHVdcn",
+            "appiumVersion" : "2.18.0",
+            "projectName" : "Sample1",
+            "buildName" : "1.0",
+            }
+        }],
 
     //
     // ===================
