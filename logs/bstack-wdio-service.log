@@ -1,0 +1,100 @@
+[90m2025-07-24T17:54:34.974Z[39m [96mINFO[39m [97m@wdio/browserstack-service[39m BrowserStack service started with id: 17ca3a47-4797-49c7-aa6f-643b09efb0ae
+[90m2025-07-24T17:54:35.011Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Sending SDK event with data {
+  userName: '[REDACTED]',
+  accessKey: '[REDACTED]',
+  event_type: 'SDKTestAttempted',
+  detectedFramework: 'WebdriverIO-mocha',
+  event_properties: {
+    sdkRunId: '17ca3a47-4797-49c7-aa6f-643b09efb0ae',
+    testhub_uuid: undefined,
+    language_framework: 'WebdriverIO_mocha',
+    referrer: 'WebdriverIO-mocha/9.18.3',
+    language: 'WebdriverIO',
+    languageVersion: 'v22.17.1',
+    buildName: '1.0',
+    buildIdentifier: 'undefined',
+    os: 'Windows_NT',
+    hostname: 'Armin-PC',
+    productMap: {
+      observability: true,
+      accessibility: null,
+      percy: false,
+      automate: true,
+      app_automate: false
+    },
+    product: [ 'observability', 'automate' ],
+    framework: 'mocha'
+  }
+}
+[90m2025-07-24T17:54:35.437Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Funnel Event Response: "{\"message\":\"SDK Event recorded successfully\"}"
+[90m2025-07-24T17:54:35.437Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Funnel event success
+[90m2025-07-24T17:54:35.438Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m app is not defined in browserstack-service config, skipping ...
+[90m2025-07-24T17:54:35.438Z[39m [33mWARN[39m [97m@wdio/browserstack-service[39m Accessibility Automation will run only on Chrome browsers.
+[90m2025-07-24T17:54:35.439Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Sending launch start event
+[90m2025-07-24T17:54:36.220Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m [Start_Build] Success response: {"observability":{"success":true,"options":{"allow_screenshots":true},"code":null,"errors":null,"error_trace_id":null},"accessibility":null,"automate":{"success":true,"options":{"allow_screenshots":true},"code":null,"errors":null,"error_trace_id":null},"turboscale":null,"build_hashed_id":"bfugjionft4fuhnqzjagr0qkyzocdw8dcjbscolv","jwt":"eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJicm93c2Vyc3RhY2tfb2IiLCJzdWIiOiIzNzkxNTM5IiwiZ3JvdXBfaWQiOjM3NDQ0MjMsInVzZXJfaWQiOjM3OTE1MzksImJ1aWxkX2hhc2hlZF9pZCI6ImJmdWdqaW9uZnQ0ZnVobnF6amFncjBxa3l6b2NkdzhkY2pic2NvbHYiLCJwcm9qZWN0X25hbWUiOiJTYW1wbGUgUHJvamVjdCIsImhvb2tfYXNfdGVzdCI6IjEiLCJidWlsZF9uYW1lIjoiMSAwIiwicHJvZHVjdF9tYXAiOiJ7XCJvYnNlcnZhYmlsaXR5XCI6dHJ1ZSxcImF1dG9tYXRlXCI6dHJ1ZSxcIm9yaWdpbkZyb21Qcm9kdWN0TWFwXCI6XCJBdXRvbWF0ZVwiLFwiYnN0YWNrQXV0b21hdGlvblwiOnRydWUsXCJjYWRcIjp0cnVlLFwibm9uU0RLXCI6ZmFsc2UsXCJhY2Nlc3NpYmlsaXR5QXV0b0VuYWJsZWRcIjp0cnVlfSIsImdycl9yZWdpb24iOiIiLCJpc19sb3dfdm9sdW1lIjpmYWxzZSwic2lnbmluZ19rZXlfaGFzaCI6IjM3YzExMzFlNGIyZTc0M2M3NjZlMWQ3MGJmNWYyYjU3ZGM2OWIxOTVkMzAwZTMyYWU4ZDAyMzEyMGE0YTZkOTciLCJpYXQiOjE3NTMzNzk2NzYsImV4cCI6MTc1MzcyNTI3Nn0.aqwnoODgHDjivfVo_sOvmiQ6e9JAO1LpNAgXcooQ5xk","discard_build":null,"app_automate":null}
+[90m2025-07-24T17:54:36.220Z[39m [96mINFO[39m [97m@wdio/browserstack-service[39m Testhub started with id: bfugjionft4fuhnqzjagr0qkyzocdw8dcjbscolv
+[90m2025-07-24T17:54:36.222Z[39m [96mINFO[39m [97m@wdio/browserstack-service[39m browserstackLocal is not enabled - skipping...
+[90m2025-07-24T17:56:04.968Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m teardown started
+[90m2025-07-24T17:56:04.968Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m teardown ended
+[90m2025-07-24T17:56:05.403Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Inside OnComplete hook..
+[90m2025-07-24T17:56:05.403Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Sending stop launch event
+[90m2025-07-24T17:56:05.760Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m [STOP_BUILD] Success response: 
+[90m2025-07-24T17:56:05.767Z[39m [96mINFO[39m [97m@wdio/browserstack-service[39m BrowserStack service run ended for id: 17ca3a47-4797-49c7-aa6f-643b09efb0ae testhub id: bfugjionft4fuhnqzjagr0qkyzocdw8dcjbscolv
+[90m2025-07-24T17:56:05.772Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Reading worker file worker-data-172116.json
+[90m2025-07-24T17:56:05.788Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Sending SDK event with data {
+  userName: '[REDACTED]',
+  accessKey: '[REDACTED]',
+  event_type: 'SDKTestSuccessful',
+  detectedFramework: 'WebdriverIO-mocha',
+  event_properties: {
+    sdkRunId: '17ca3a47-4797-49c7-aa6f-643b09efb0ae',
+    testhub_uuid: 'bfugjionft4fuhnqzjagr0qkyzocdw8dcjbscolv',
+    language_framework: 'WebdriverIO_mocha',
+    referrer: 'WebdriverIO-mocha/9.18.3',
+    language: 'WebdriverIO',
+    languageVersion: 'v22.17.1',
+    buildName: '1.0',
+    buildIdentifier: 'undefined',
+    os: 'Windows_NT',
+    hostname: 'Armin-PC',
+    productMap: {
+      observability: true,
+      accessibility: null,
+      percy: false,
+      automate: true,
+      app_automate: false
+    },
+    product: [ 'observability', 'automate' ],
+    framework: 'mocha',
+    productUsage: {
+      testObservability: {
+        enabled: true,
+        manuallySet: false,
+        buildHashedId: 'bfugjionft4fuhnqzjagr0qkyzocdw8dcjbscolv',
+        events: {
+          buildEvents: {
+            started: { isTriggered: true, status: 'success', error: undefined },
+            finished: { isTriggered: true, status: 'success', error: undefined }
+          },
+          testEvents: {
+            started: { triggeredCount: 0, sentCount: 0, failedCount: 0 },
+            finished: { triggeredCount: 0, sentCount: 0, failedCount: 0 }
+          },
+          hookEvents: {
+            started: { triggeredCount: 0, sentCount: 0, failedCount: 0 },
+            finished: { triggeredCount: 0, sentCount: 0, failedCount: 0 }
+          },
+          logEvents: { triggeredCount: 0, sentCount: 0, failedCount: 0 },
+          cbtSessionEvents: { triggeredCount: 0, sentCount: 0, failedCount: 0 }
+        }
+      }
+    }
+  }
+}
+[90m2025-07-24T17:56:06.012Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Funnel Event Response: "{\"message\":\"SDK Event recorded successfully\"}"
+[90m2025-07-24T17:56:06.012Z[39m [32mDEBUG[39m [97m@wdio/browserstack-service[39m Funnel event success
+[90m2025-07-24T17:56:06.675Z[39m [96mINFO[39m [97m@wdio/browserstack-service[39m Upload response: {
+  "status": "success",
+  "message": "Logs upload successful in file - logs.gz"
+}
+2025-07-24T17:56:07.829Z DEBUG @wdio/browserstack-service Successfully uploaded performance events Bravo

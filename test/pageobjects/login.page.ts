@@ -27,7 +27,10 @@ class LoginPage extends Page {
     public get errorPassword () {
         return $('//android.widget.TextView[@text="Please enter at least 8 characters"]');
     }
-    //ok button android:id/button1 //android.widget.Button[@resource-id="android:id/button1"]
+
+    public get btnLoginAlert () {
+        return $('id:id/button1');
+    }
 
      // a method to encapsule automation code to interact with the page
      // e.g. to login using username and password

@@ -6,23 +6,39 @@ import data from '../data'
 describe('Log into customer account', () => {
     it('should login with no credentials and check error', async () => {
 
-        await Home.navLogin.click()
+        await LoginPage.navigateLogin();
         await LoginPage.login('', '')
         await expect(LoginPage.errorUsername).toBeExisting()
-        await expect(LoginPage.errorUsername).toHaveText("Please enter atleast 8 digits")
+        await expect(LoginPage.errorUsername).toHaveText("Please enter a valid email address")
+        await expect(LoginPage.errorPassword).toBeExisting()
+        await expect(LoginPage.errorPassword).toHaveText("Please enter at least 8 characters")
    })
 
     it('should login with wrong credentials and check error', async () => {
 
         await LoginPage.login(data.wrongUser.email, data.wrongUser.password)
         await expect(LoginPage.errorUsername).toBeExisting()
-        await expect(LoginPage.errorUsername).toHaveText("Please enter atleast 8 digits")
+        await expect(LoginPage.errorUsername).toHaveText("Please enter a valid email address")
+        await expect(LoginPage.errorPassword).toBeExisting()
+        await expect(LoginPage.errorPassword).toHaveText("Please enter at least 8 characters")
+    })
+
+    it('should login with wrong email and check error password error dissapears', async () => {
+
+        await LoginPage.login(data.wrongEmailUser.email, data.wrongEmailUser.password)
+        await expect(LoginPage.errorUsername).toBeExisting()
+        await expect(LoginPage.errorUsername).toHaveText("Please enter a valid email address")
+        await LoginPage.errorPassword.waitForDisplayed({ reverse: true, timeout: 2000 });
+        await expect(LoginPage.errorPassword).not.toBeExisting()
     })
 
     it('should login with valid credentials', async () => {
     // This sample app's login doesnt really work it just shows an example "you are logged in" message"
         await LoginPage.login(data.validUser.email, data.validUser.password)
-        await expect(LoginPage).toBeExisting()
+        await expect(LoginPage.btnLoginAlert).toBeExisting()
+        await LoginPage.btnLoginAlert.click()
+        await expect(LoginPage.btnLoginAlert).not.toBeExisting()
+        await expect(LoginPage.btnSubmit).toBeDisabled()
 
     })
 })
