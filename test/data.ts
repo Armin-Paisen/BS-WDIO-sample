@@ -8,14 +8,21 @@ const validUser: User = {
   password: '',
 };
 
+const wrongEmailUser: User = {
+  email: 'xyz@abc',
+  password: '123456789',
+};
+
+
 const wrongUser: User = {
-  email: '',
-  password: '',
+  email: 'xyz@abc',
+  password: '123',
 };
 
 // All users under a single namespace-like object
 export const data = {
   validUser,
+  wrongEmailUser,
   wrongUser,
 } satisfies Record<string, User>; // remove "satisfies" if you're on TS < 4.9
 
