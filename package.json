@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
     "@wdio/appium-service": "^9.18.4",
     "@wdio/browserstack-service": "^9.18.4",
     "@wdio/cli": "^9.18.4",

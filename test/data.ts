@@ -4,8 +4,8 @@ export type User = {
 };
 
 const validUser: User = {
-  email: '',
-  password: '',
+  email: 'xyz@abc.com',
+  password: '123456789',
 };
 
 const wrongEmailUser: User = {
