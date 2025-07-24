@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 export const config: WebdriverIO.Config = {
     // ====================
     // Runner Configuration
@@ -6,10 +8,13 @@ export const config: WebdriverIO.Config = {
     runner: 'local',
     tsConfigPath: './test/tsconfig.json',
     
-    port: 4723,
+    protocol: 'https',
+    hostname: 'hub-cloud.browserstack.com',
+    port: 443,
+    path: '/wd/hub',
 
-    user: "silvertoursgmbh1", //process.env.BROWSERSTACK_USERNAME,
-    key: "mVkRECR3N6po88je3GLV", //process.env.BROWSERSTACK_ACCESS_KEY,
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
 
     // ==================
     // Specify Test Files
@@ -56,8 +61,8 @@ export const config: WebdriverIO.Config = {
             "userName" : "armin_nxduqy",
             "accessKey" : "KmGvP7M7gnHTingHVdcn",
             "appiumVersion" : "2.18.0",
-            "projectName" : "Sample Project",
-            "buildName" : "1.0",
+            "projectName" : process.env.PROJECT_NAME,
+            "buildName" : `local-${new Date().toISOString()}`,
             }
         }],
 
@@ -137,7 +142,8 @@ export const config: WebdriverIO.Config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
+        retries: 2,  
     },
 
     //
