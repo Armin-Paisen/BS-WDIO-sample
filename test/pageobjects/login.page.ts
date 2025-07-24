@@ -29,7 +29,7 @@ class LoginPage extends Page {
     }
 
     public get btnLoginAlert () {
-        return $('id:id/button1');
+        return $('id:android:id/button1');
     }
 
      // a method to encapsule automation code to interact with the page
@@ -42,7 +42,7 @@ class LoginPage extends Page {
     }
 
     public async navigateLogin (){
-        await homePage.navForms.click()
+        await homePage.navLogin.click()
         await expect(this.btnSubmit).toBeDisplayed()
     } 
     

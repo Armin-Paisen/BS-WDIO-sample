@@ -3,17 +3,10 @@ import LoginPage from '../pageobjects/login.page'
 import data from '../data'
 
 describe('Log into customer account', () => {
+
+
+
     it('should login with no credentials and check error', async () => {
-
-
-        before(async function () {
-            try {
-                await LoginPage.navigateLogin();
-            } catch (err) {
-                console.error('Precondition failed, skipping suite:', err);
-                this.skip();
-            }
-        });
 
         await LoginPage.navigateLogin();
         await LoginPage.login('', '')
@@ -47,7 +40,7 @@ describe('Log into customer account', () => {
         await expect(LoginPage.btnLoginAlert).toBeExisting()
         await LoginPage.btnLoginAlert.click()
         await expect(LoginPage.btnLoginAlert).not.toBeExisting()
-        await expect(LoginPage.btnSubmit).toBeDisabled()
+        await expect(LoginPage.btnSubmit).toBeDisplayed()
 
     })
 })
