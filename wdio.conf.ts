@@ -8,8 +8,8 @@ export const config: WebdriverIO.Config = {
     
     port: 4723,
 
-    user: process.env.BROWSERSTACK_USERNAME,
-    key: process.env.BROWSERSTACK_ACCESS_KEY,
+    user: "silvertoursgmbh1", //process.env.BROWSERSTACK_USERNAME,
+    key: "mVkRECR3N6po88je3GLV", //process.env.BROWSERSTACK_ACCESS_KEY,
 
     // ==================
     // Specify Test Files
@@ -48,7 +48,7 @@ export const config: WebdriverIO.Config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
-        browserName: 'Chrome',
+        'appium:app' : "bs://54cd34741886bdb157cd96964cc9348cbd84db4c",
         'appium:deviceName': 'Samsung Galaxy S23 Ultra',
         'appium:platformVersion': '13.0',
         'appium:automationName': 'UiAutomator2',
@@ -56,7 +56,7 @@ export const config: WebdriverIO.Config = {
             "userName" : "armin_nxduqy",
             "accessKey" : "KmGvP7M7gnHTingHVdcn",
             "appiumVersion" : "2.18.0",
-            "projectName" : "Sample1",
+            "projectName" : "Sample Project",
             "buildName" : "1.0",
             }
         }],
