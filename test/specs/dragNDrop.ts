@@ -18,6 +18,7 @@ describe('Drags and drops items into correct place', () => {
         await DraggingPage.item_c2.dragAndDrop(await DraggingPage.target_c2);
         await DraggingPage.item_c3.dragAndDrop(await DraggingPage.target_c3);
 
+        await DraggingPage.successMessage.waitForDisplayed({ timeout: 2000 })
         await expect(DraggingPage.successMessage).toBeDisplayed()
         await expect(DraggingPage.successMessage).toHaveText("Congratulations")
         await expect(DraggingPage.retryBtn).toBeDisplayed()
