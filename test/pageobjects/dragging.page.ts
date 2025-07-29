@@ -15,7 +15,7 @@ class HomePage extends Page {
     }
 
     public get successMessage() {
-        return $('~//android.widget.TextView[@text="Congratulations"]');
+        return $('//android.widget.TextView[@text="Congratulations"]');
     }
 
     public get retryBtn() {
@@ -49,7 +49,6 @@ class HomePage extends Page {
         return $('~drag-r3');
     }
 
-
     public get item_c1() {
         return $('~drag-c1');
     }
@@ -82,7 +81,7 @@ class HomePage extends Page {
     }
 
     public get target_r2() {
-        return $('~dropr2');
+        return $('~drop-r2');
     }
 
     public get target_r3() {
