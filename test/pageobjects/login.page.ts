@@ -1,4 +1,3 @@
-import { $ } from '@wdio/globals'
 import Page from './page';
 import homePage from './home.page';
 
@@ -42,7 +41,7 @@ class LoginPage extends Page {
     }
 
     public async navigateLogin (){
-        await homePage.navLogin.click()
+        await this.navLogin.click()
         await expect(this.btnSubmit).toBeDisplayed()
     } 
     

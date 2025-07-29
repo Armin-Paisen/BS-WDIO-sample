@@ -1,4 +1,3 @@
-import { $ } from '@wdio/globals'
 import Page from './page';
 
 
@@ -11,9 +10,6 @@ class HomePage extends Page {
         return $('');
     }
 
-    public get navLogin () {
-        return $('~Login');
-    }
     public get navForms () {
         return $('~Forms');
     }
