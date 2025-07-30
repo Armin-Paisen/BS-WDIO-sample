@@ -73,7 +73,7 @@ export const config: WebdriverIO.Config = {
             "userName" : "armin_nxduqy",
             "accessKey" : "KmGvP7M7gnHTingHVdcn",
             "appiumVersion" : "2.18.0",
-            "projectName" : process.env.PROJECT_NAME,
+            "projectName" : "BS-WDIO-sample",
             "buildName" : `local-${new Date().toISOString()}`,
             }
         }],
