@@ -29,6 +29,12 @@ jobs:
           username: ${{ secrets.BROWSERSTACK_USERNAME }}
           access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}  
 
+      - name: Debug inputs
+        run: |
+          echo "github.event.inputs.testSuite: '${{ github.event.inputs.testSuite }}'"
+          echo "inputs via tojson: ${{ toJSON(github.event.inputs) }}"
+          
+
       - name: Run WebdriverIO tests
         run: |
           if [ "${{ github.event.inputs.testSuite }}" != "" ]; then
