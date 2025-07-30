@@ -46,7 +46,6 @@ export const config: WebdriverIO.Config = {
             // add more test file paths here
         ],
         flakey: [
-            './test/specs/loginLogout.ts',
             './test/specs/dragNDrop.ts',
             // add more test file paths here
         ],
