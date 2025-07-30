@@ -9,7 +9,7 @@ export const config: WebdriverIO.Config = {
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
     tsConfigPath: './test/tsconfig.json',
-    
+
     protocol: 'https',
     hostname: 'hub-cloud.browserstack.com',
     port: 443,
@@ -17,10 +17,10 @@ export const config: WebdriverIO.Config = {
 
     user: process.env.BROWSERSTACK_USERNAME,
     key: process.env.BROWSERSTACK_ACCESS_KEY,
-    
+
     services: [
-    'appium',
-    'browserstack',],
+        'appium',
+        'browserstack',],
     /*[EyesService, {
       key: process.env.APPLITOOLS_KEY|| '<YOUR_API_KEY>',
       //appName: 'My App Under Test',                     // optional
@@ -36,6 +36,16 @@ export const config: WebdriverIO.Config = {
     specs: [
         './test/specs/**/*.ts'
     ],
+    suites: {
+        smoke: [
+            './test/specs/loginLogout.ts',
+        ],
+        regression: [
+            './test/specs/loginLogout.ts',
+            './test/specs/dragNDrop.ts',
+            // add more test file paths here
+        ],
+    },
 
     exclude: [
         // 'path/to/excluded/files'
@@ -65,18 +75,16 @@ export const config: WebdriverIO.Config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
-        'appium:app' : "bs://54cd34741886bdb157cd96964cc9348cbd84db4c",
+        'appium:app': "bs://54cd34741886bdb157cd96964cc9348cbd84db4c",
         'appium:deviceName': 'Samsung Galaxy S23 Ultra',
         'appium:platformVersion': '13.0',
         'appium:automationName': 'UiAutomator2',
-        'bstack:options' : {
-            "userName" : "armin_nxduqy",
-            "accessKey" : "KmGvP7M7gnHTingHVdcn",
-            "appiumVersion" : "2.18.0",
-            "projectName" : "BS-WDIO-sample",
-            "buildName" : `local-${new Date().toISOString()}`,
-            }
-        }],
+        'bstack:options': {
+            "appiumVersion": "2.18.0",
+            "projectName": "BS-WDIO-sample",
+            "buildName": `Test run -${new Date().toISOString()}`,
+        }
+    }],
 
     //
     // ===================
@@ -120,7 +128,7 @@ export const config: WebdriverIO.Config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
-    
+
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -129,7 +137,7 @@ export const config: WebdriverIO.Config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -150,7 +158,7 @@ export const config: WebdriverIO.Config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000,
-        retries: 2,  
+        retries: 2,
     },
 
     //
