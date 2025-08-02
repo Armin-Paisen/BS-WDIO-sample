@@ -3,21 +3,10 @@ Config 2tes device hinzufügen
 include selfheal 
 readme ausfüllen
 Beispiel für Hook und Custom Command einbauen (z. B. Login, Cleanup, Retry-Strategie)
-Linting/ESLint konfigurieren und Pre-Commit Checks hinzunehmen
-pipeline bei push automatisch ausführen
-#on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
-#  workflow_dispatch:
+
 Feedback direkt innerhalb der Action-Ansicht ist viel benutzerfreundlicher
 - name: Publish Test Summary Results
   run: npx github-actions-ctrf path/to/ctrf-report.json
-
-
-
-ESLint can enforce testing-related rules (e.g., no-focused-tests) or restrict use of flaky patterns, especially in test automation frameworks.
 
 Integrates Well with CI/CD
 You can include lint checks in your CI pipeline to automatically reject poorly formatted PRs, just like in real teams.
