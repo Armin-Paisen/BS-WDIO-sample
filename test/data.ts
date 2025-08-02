@@ -4,19 +4,18 @@ export type User = {
 };
 
 const validUser: User = {
-  email: 'xyz@abc.com',
-  password: '123456789',
+  email: "xyz@abc.com",
+  password: "123456789",
 };
 
 const wrongEmailUser: User = {
-  email: 'xyz@abc',
-  password: '123456789',
+  email: "xyz@abc",
+  password: "123456789",
 };
 
-
 const wrongUser: User = {
-  email: 'xyz@abc',
-  password: '123',
+  email: "xyz@abc",
+  password: "123",
 };
 
 // All users under a single namespace-like object
