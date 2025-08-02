@@ -40,7 +40,7 @@ jobs:
       - name: Determine which suite to run
         run: |
           if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            echo "TEST_SUITE=regression" >> $GITHUB_ENV
+            echo "TEST_SUITE=smoke" >> $GITHUB_ENV
           elif [ "${{ github.event.inputs.testSuite }}" != "" ]; then
             echo "TEST_SUITE=${{ github.event.inputs.testSuite }}" >> $GITHUB_ENV
           else
