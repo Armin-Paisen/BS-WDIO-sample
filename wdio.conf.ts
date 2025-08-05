@@ -20,11 +20,11 @@ export const config: WebdriverIO.Config = {
 
   services: ["appium", "browserstack"],
   /*[EyesService, {
-      key: process.env.APPLITOOLS_KEY|| '<YOUR_API_KEY>',
-      //appName: 'My App Under Test',                     // optional
-      //viewport: { width: 1920, height: 1080 },          // optional
-    }]
-    ],*/
+        key: process.env.APPLITOOLS_KEY|| '<YOUR_API_KEY>',
+        //appName: 'My App Under Test',                     // optional
+        //viewport: { width: 1920, height: 1080 },          // optional
+      }]
+      ],*/
 
   // ==================
   // Specify Test Files
@@ -72,16 +72,36 @@ export const config: WebdriverIO.Config = {
   //
   capabilities: [
     {
-      // capabilities for local Appium web tests on an Android Emulator
+      // capabilities
       platformName: "Android",
       "appium:app": "bs://54cd34741886bdb157cd96964cc9348cbd84db4c",
       "appium:deviceName": "Samsung Galaxy S23 Ultra",
-      "appium:platformVersion": "13.0",
+      "appium:autoGrantPermissions": true,
       "appium:automationName": "UiAutomator2",
       "bstack:options": {
+        // @ts-expect-error - its a known capability
+        selfHeal: true,
         appiumVersion: "2.18.0",
         projectName: "BS-WDIO-sample",
-        buildName: `Test run -${new Date().toISOString()}`,
+        buildName: `Test run WDIO-APP`,
+        idleTimeout: 180,
+      },
+    },
+
+    {
+      // capabilities
+      platformName: "Android",
+      "appium:app": "bs://54cd34741886bdb157cd96964cc9348cbd84db4c",
+      "appium:deviceName": "Google Pixel 5",
+      "appium:autoGrantPermissions": true,
+      "appium:automationName": "UiAutomator2",
+      "bstack:options": {
+        // @ts-expect-error - its a known capability
+        selfHeal: true,
+        appiumVersion: "2.18.0",
+        projectName: "BS-WDIO-sample",
+        buildName: `Test run WDIO-APP`,
+        idleTimeout: 180,
       },
     },
   ],
