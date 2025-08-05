@@ -87,7 +87,7 @@ jobs:
 
       - name: Merge CTRF reports
         run: |
-          npx ctrf merge "ctrf/*.json" --output ctrf/ctrf-report.json
+          npx ctrf merge ctrf --output ctrf-report.json
 
       - name: Publish Test Summary
         if: always()
