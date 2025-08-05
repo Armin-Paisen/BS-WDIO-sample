@@ -81,3 +81,7 @@ jobs:
             echo "Running default suite"
             npm run wdio
           fi
+          
+      - name: Publish Test Summary
+        if: always()
+        run: npx github-actions-ctrf ctrf/ctrf-report.json
