@@ -81,7 +81,10 @@ jobs:
             echo "Running default suite"
             npm run wdio
           fi
-          
+
+      - name: Merge CTRF reports
+        run: npx ctrf merge ctrf --outputFile ctrf-report.json
+
       - name: Publish Test Summary
         if: always()
         run: npx github-actions-ctrf ctrf/ctrf-report.json
