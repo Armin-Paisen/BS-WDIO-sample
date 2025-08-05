@@ -29,10 +29,12 @@ export const config: WebdriverIO.Config = {
   reporters: [
     "spec",
     [
-      "ctrf",
+      "ctrf-json",
       {
-        outputDir: "ctrf", // must match your merge directory
-        outputFileFormat: () => "test-results.json",
+        outputDir: "ctrf", // must match your merge folder
+        outputFileFormat: (
+          options, // ensures unique names per worker
+        ) => `test-results-${options.cid}.json`,
       },
     ],
   ],
