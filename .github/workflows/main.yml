@@ -82,8 +82,12 @@ jobs:
             npm run wdio
           fi
 
+      - name: List CTRF files
+        run: ls -R ctrf
+
       - name: Merge CTRF reports
-        run: npx ctrf merge ctrf --outputFile ctrf/ctrf-report.json
+        run: |
+          npx ctrf merge "ctrf/*.json" --output ctrf/ctrf-report.json
 
       - name: Publish Test Summary
         if: always()
