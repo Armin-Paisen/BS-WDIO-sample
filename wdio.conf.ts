@@ -26,6 +26,16 @@ export const config: WebdriverIO.Config = {
       }]
       ],*/
 
+  reporters: [
+    "spec",
+    [
+      "ctrf",
+      {
+        outputDir: "ctrf", // must match your merge directory
+        outputFileFormat: () => "test-results.json",
+      },
+    ],
+  ],
   // ==================
   // Specify Test Files
   // ==================
@@ -167,10 +177,6 @@ export const config: WebdriverIO.Config = {
   // Whether or not retried spec files should be retried immediately or deferred to the end of the queue
   // specFileRetriesDeferred: false,
   //
-  // Test reporter for stdout.
-  // The only one supported by default is 'dot'
-  // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
 
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
