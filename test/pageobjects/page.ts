@@ -9,6 +9,10 @@ export default class Page {
     return $("~Login");
   }
 
+  public get navDrag() {
+    return $("~Drag");
+  }
+
   public open(path: string) {
     return browser.url(`https://the-internet.herokuapp.com/${path}`);
   }

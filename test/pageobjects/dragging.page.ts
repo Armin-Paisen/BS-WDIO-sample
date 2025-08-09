@@ -9,10 +9,6 @@ class HomePage extends Page {
     return $("~Drag-drop-screen");
   }
 
-  public get navDrag() {
-    return $("~Drag");
-  }
-
   public get successMessage() {
     return $('//android.widget.TextView[@text="Congratulations"]');
   }
