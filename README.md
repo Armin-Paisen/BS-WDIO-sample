@@ -40,4 +40,35 @@ A showcase of robust, scalable, and business-focused end-to-end web testing auto
    git clone https://github.com/Armin-Paisen/BS-WDIO-sample
    cd BS-WDIO-sample
    npm install
-   npx wdio run wdio.conf.ts
+   
+
+To be able to run this project with browserstack you need to edit the .env.example. Open the .env.example file and follow the insturctions (comments in the file) 
+
+2. **Run the tests**
+    npx wdio run wdio.conf.ts
+
+
+Tests can also be run manually in GitHub or be started by another pipeline form another repository (requires some additional work)
+
+
+TODO:
+Tell story of how everything adds value:
+
+Reduce maintanance effort by 30% and flakyness by 50%:
+Robust architecture
+-eslint
+-test being encapsulated (can run solo any time without breaking)
+-page object model
+-observability with ctrf report in Github (as example for small custom made report - browserstack has its on detailed report dashboard so not really neccesary in thsi project)
+-GitHub  push automatically executes test to check if nothing is broken after test code update
+
+Reduce manual testing effort by 80%:
+scalable framework
+-cross device testing
+-parallel testing
+-CI/CD pipeline
+-suit split smoke/regression
+
+
+mark tests as flaky
+.env
