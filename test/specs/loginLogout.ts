@@ -1,45 +1,37 @@
 import LoginPage from "../pageobjects/login.page";
 import data from "../data";
+import { ERRORS } from "../constants/messages";
 
 describe("Log into customer account", () => {
-  it("should login with no credentials and check error", async () => {
+  //Ensures every test can be run isolated
+  beforeEach(async () => {
     await LoginPage.navigateLogin();
+    await LoginPage.resetForm();
+  });
+
+  it("shows field errors for empty credentials", async () => {
     await LoginPage.login("", "");
     await expect(LoginPage.errorUsername).toBeDisplayed();
-    await expect(LoginPage.errorUsername).toHaveText(
-      "Please enter a valid email address",
-    );
+    await expect(LoginPage.errorUsername).toHaveText(ERRORS.emailInvalid);
     await expect(LoginPage.errorPassword).toBeDisplayed();
-    await expect(LoginPage.errorPassword).toHaveText(
-      "Please enter at least 8 characters",
-    );
+    await expect(LoginPage.errorPassword).toHaveText(ERRORS.passwordTooShort);
   });
 
-  it("should login with wrong credentials and check error", async () => {
+  it("shows field errors for wrong credentials", async () => {
     await LoginPage.login(data.wrongUser.email, data.wrongUser.password);
     await expect(LoginPage.errorUsername).toBeDisplayed();
-    await expect(LoginPage.errorUsername).toHaveText(
-      "Please enter a valid email address",
-    );
+    await expect(LoginPage.errorUsername).toHaveText(ERRORS.emailInvalid);
     await expect(LoginPage.errorPassword).toBeDisplayed();
-    await expect(LoginPage.errorPassword).toHaveText(
-      "Please enter at least 8 characters",
-    );
+    await expect(LoginPage.errorPassword).toHaveText(ERRORS.passwordTooShort);
   });
 
-  it("should login with wrong email and check error password error dissapears", async () => {
+  it("shows only email error when password is valid", async () => {
     await LoginPage.login(
       data.wrongEmailUser.email,
       data.wrongEmailUser.password,
     );
     await expect(LoginPage.errorUsername).toBeDisplayed();
-    await expect(LoginPage.errorUsername).toHaveText(
-      "Please enter a valid email address",
-    );
-    await LoginPage.errorPassword.waitForDisplayed({
-      reverse: true,
-      timeout: 2000,
-    });
+    await expect(LoginPage.errorUsername).toHaveText(ERRORS.emailInvalid);
     await expect(LoginPage.errorPassword).not.toBeDisplayed();
   });
 

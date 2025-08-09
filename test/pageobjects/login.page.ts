@@ -47,7 +47,10 @@ class LoginPage extends Page {
     await expect(this.btnSubmit).toBeDisplayed();
   }
 
-  // overwrite specific options to adapt it to page object
+  async resetForm() {
+    await this.inputUsername.clearValue();
+    await this.inputPassword.clearValue();
+  }
 }
 
 export default new LoginPage();
