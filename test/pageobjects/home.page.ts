@@ -17,10 +17,6 @@ class HomePage extends Page {
   // e.g. to login using username and password
 
   // overwrite specific options to adapt it to page object
-
-  public open() {
-    return super.open("home");
-  }
 }
 
 export default new HomePage();
